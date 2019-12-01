@@ -1,0 +1,13 @@
+Vehicles
+ Trucks-card
+ Buses-card
+ cars-card
+panels
+ Trucks-panel
+ Buses-panel
+ cars-panel
+general
+ header
+ footer
+ Navigation
+ paginator

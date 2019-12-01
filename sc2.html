@@ -1,0 +1,103 @@
+<style>
+    body{margin: 0%;padding: 0%;}
+    /* .div{position: relative;width: 100%;height: 100%;max-height: 200px; }
+    img{width: 50%;height: 80%;}
+    li>div{position: absolute;top:6%;left: 10%;}
+    li{position: absolute;top: 0 ;left:-110%;width: 100%;height: 100%;opacity:70%; } */
+    .divImg{position: relative;width: 100%;height: 100%; max-height: 200px;border: double;
+    border-color: black;;max-width: 400px ;display: inline-block ;position: relative;}
+    .divImg>img{position: absolute;top: 0 ;left:10%;width: 50%;height: 95%;opacity:100%;position: absolute; }
+    /* .divImg2>img{
+      opacity:0%;
+        } */
+    .divImg2 .show{opacity:0%;transition: opacity 2s}
+    .divImg2 .s{opacity:100%;transition: opacity 2s}
+    
+</style>
+<h1>css in img</h1>
+<!-- <div class="div">
+  <ul>
+    <li>
+      <div>a</div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_pqJdyfI_DKhFeeTcSlOgbhRFpuzTDj5G5a0aM4VwkfZlBUq-&s" >
+    </li>
+    <li class="shew">
+      <div>b</div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR3kvGjYN-D0pjLpIUtuE__ZdQDG8bTsL5AFBOS7tS_LsOlEs_&s" >
+    </li>
+    <li>
+      <div>c</div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5ZQyaxi4zc5jostg9VFUnWuW8R9mPGpAOlAq7X9H4YwV6lx8&s" >
+    </li>
+    <li>
+      <div>d</div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1pgajdcXHB0r1cqSmzJAypPIeTnHtuxR-ef8rBqEYb0IZ9_Lz&s" >
+    </li>
+    <li>
+        <div>e</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNZynRPiun0X_D9Zov_SVihyI7g2__Xm5NnDFeh7EErjkGwFHtbg&s" >
+    </li>
+    <li>
+        <div>f</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsAOV9HgkraDPYpNPt_ako0cmNNtXSSU_bCVzjXW03q3mn1Zc&s" >
+    </li>
+  </ul>
+</div>
+ <div class="divImg">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_pqJdyfI_DKhFeeTcSlOgbhRFpuzTDj5G5a0aM4VwkfZlBUq-&s" >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR3kvGjYN-D0pjLpIUtuE__ZdQDG8bTsL5AFBOS7tS_LsOlEs_&s" >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5ZQyaxi4zc5jostg9VFUnWuW8R9mPGpAOlAq7X9H4YwV6lx8&s" >
+ </div> -->
+ <div class="divImg divImg2">
+    <img class="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_pqJdyfI_DKhFeeTcSlOgbhRFpuzTDj5G5a0aM4VwkfZlBUq-&s" >
+    <img class="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR3kvGjYN-D0pjLpIUtuE__ZdQDG8bTsL5AFBOS7tS_LsOlEs_&s" >
+    <img class="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN5ZQyaxi4zc5jostg9VFUnWuW8R9mPGpAOlAq7X9H4YwV6lx8&s" >
+ </div>
+<script>
+  let LiIndex=0;
+  let LiIndex1=1;
+  let LiIndex2=2;
+  function shewThisPhoto(){
+    console.log('shewThisPhoto.stert : LiIndex = '+ LiIndex +' LiIndex1 =   '+LiIndex1  );
+    for (let i = 1; i < 51; i++) {
+      let time =  (i*10);
+      console.log( 'time = '+time);
+      setTimeout(()=>{
+      let thisPhotoShow =  document.querySelectorAll('li')[LiIndex];
+      let thisPhotoShow1 =  document.querySelectorAll('li')[LiIndex1];
+      let thisPhotoShow2 =  document.querySelectorAll('li')[LiIndex2];
+      thisPhotoShow.style.left =  ((50 + i)+'%');
+      thisPhotoShow1.style.left = ((i)+'%');
+      thisPhotoShow2.style.left = ('-'+(50-i)+'%');
+      console.log('LiIndex = '+LiIndex+' LiIndex1 =  '+LiIndex1+'  LiIndex2  = ' +LiIndex2);
+      console.log("thisPhotoShow.style.left = " +  thisPhotoShow.style.left );
+      console.log("thisPhotoShow1.style.left = " +  thisPhotoShow1.style.left );
+      console.log("thisPhotoShow2.style.left = " +  thisPhotoShow2.style.left );
+      },time);
+    };
+    setTimeout(()=>{
+      LiIndex++;
+      LiIndex1++;
+      LiIndex2++;
+    if (LiIndex==6){LiIndex=0}
+    if (LiIndex1==6){LiIndex1=0}
+    if (LiIndex2==6){LiIndex2=0}
+    },1500
+    )
+  }
+  // shewThisPhoto()
+  // setInterval(shewThisPhoto,1500)
+  let imgIndex = 2
+  let imgIndex2 = 1
+  function a(){
+      let thisPhotoShow =  document.querySelectorAll('.divImg2>img')[imgIndex];
+      thisPhotoShow.className='show'
+      thisPhotoShow =  document.querySelectorAll('.divImg2>img')[imgIndex2];
+      thisPhotoShow.className=''
+      imgIndex--
+      imgIndex2--
+      if(imgIndex==-1){imgIndex=2}
+      if(imgIndex2==-1){imgIndex=2}
+    }
+    setInterval(a,2000)
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d"></div>
+    <script>
+    n1= 6,n2=45,n3 = 96;
+    
+
+    function sum (a,b,c){
+        console.log("");
+        console.log("I am a,b,c of sum :"+a+","+b+","+c);
+        let d1 = new Date;
+        console.log(d1.getMinutes()+":"+d1.getMilliseconds());
+        console.log("sum end return :"+(a+b+c));
+        let d2 = new Date;
+        console.log(d2.getMinutes()+":"+d2.getMilliseconds());
+        console.log("");
+        return a+b+c   
+    }
+    function mult (a,b,c){
+        console.log("");
+        console.log("I am a,b,c of mult :"+a+","+b+","+c);
+        let d1 = new Date;
+        console.log(d1.getMinutes()+":"+d1.getMilliseconds());
+        console.log("sum end return :"+(a*b*c));
+        let d2 = new Date;
+        console.log(d2.getMinutes()+":"+d2.getMilliseconds());
+        console.log("");
+        return a*b*c   
+    }
+        // document.getElementById('d').innerHTML+="sum </br>"
+        // total = sum(n1,n2,n3) 
+        // console.log("total of  sum = "+ total);
+        // document.getElementById('d').innerHTML+=total+'<br>'
+        // document.getElementById('d').innerHTML+="mult </br>"
+        // total = mult(n1,n2,n3) 
+        // console.log("total of  mult = "+ total);
+        // document.getElementById('d').innerHTML+=total+'<br>'
+
+     function sumSum (a,b,c,myCallback,timeOut){
+         console.log("sumSum stert = " +a+","+b+","+c+"  timeOut ="+timeOut);
+         //let ss = myCallback(a,b,c)
+        //  console.log(myCallback(1,5,9));
+         //console.log(ss(a,b,c));
+        setTimeout(()=>{myCallback(a,b,c)},timeOut)
+         console.log("sumSum end = " +a+","+b+","+c+"  timeOut ="+timeOut);
+     }
+     function sumMult (a,b,c,myCallback,timeOut){
+         console.log("sumMult stert = " +a+","+b+","+c+"  timeOut ="+timeOut);
+        //console.log(myCallback(a,b,c));
+        //let ss = myCallback()
+        //  console.log(myCallback(1,5,9));
+        //console.log(ss(a,b,c));
+        //setTimeout(function (){ss(a,b,c)},timeOut)
+        setTimeout(()=>myCallback(a,b,c),timeOut)
+        //console.log(ss(a,b,c));
+         console.log("sumMult end = " +a+","+b+","+c+"  timeOut ="+timeOut);
+     }
+    sumSum(n1,n2,n3,()=> sum(),120)
+    sumMult(n1,n2,n3,()=>mult(),1500)
+    
+    
+    
+    
+    </script>
+</body>
+</html>

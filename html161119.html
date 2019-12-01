@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span > </span>
+        <img  id="im" src="" alt="">
+        <img  id="im2" src="" alt="">
+    </div>
+    <button onclick="next()">next</button>
+    <script>
+        let index = 1
+        function next(){
+            let xmt = new XMLHttpRequest();
+            xmt.onload= function(){
+                let i = JSON.parse(this.responseText)
+                document.querySelector("span").innerHTML = i.title
+            }
+            xmt.open("GET","https://jsonplaceholder.typicode.com/todos/"+index)
+            xmt.send()
+
+            let xml1 = new XMLHttpRequest();
+            xml1.onload= function(){
+                let i2 = JSON.parse(this.responseText)
+                console.log(i2.url);
+                document.querySelector("#im").src = i2.url
+                document.querySelector("#im2").src = i2.thumbnailUrl
+            }
+            xml1.open("GET","https://jsonplaceholder.typicode.com/photos/"+index)
+            xml1.send()
+            
+            index++;
+        }
+
+
+    </script>
+</body>
+</html>
+<!-- "https://jsonplaceholder.typicode.com/todos" -->

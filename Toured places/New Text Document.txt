@@ -1,0 +1,20 @@
+Toured places
+	components
+		Panels
+			touringSitesPanel 
+			hotelsPanel 
+		Cards
+			touringSitesCard
+ 			hotelsCard
+		general
+			header
+			everything
+			navigation
+			paginator
+			panelBody
+			footer
+
+
+2875096-T2126
+2850495   1590
+		
